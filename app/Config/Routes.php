@@ -37,6 +37,7 @@ $routes->setAutoRoute(true);
 // User 
 $routes->get('/','UserController::loginForm');
 $routes->post('login', 'UserControler::login');
+$routes->get('registerForm', 'UserControler::registerForm');
 $routes->get('user-list','UserController::index');
 $routes->get('formUser','UserController::create');
 $routes->post('addUser','UserController::store');

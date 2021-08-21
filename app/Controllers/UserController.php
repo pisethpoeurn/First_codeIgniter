@@ -27,7 +27,9 @@ class UserController extends Controller{
 
     // Show specific user
     public function fineUserById($id){
-        return;
+        $usersModel = new UserModel();
+        $datas['users'] = $usersModel->find($id);
+        return view('user/userDetail', $datas);
     }
 
     // Go to fome Edit
@@ -72,6 +74,10 @@ class UserController extends Controller{
             }
         }
         return NULL;
-    }                   
+    }    
+    
+    public function registerForm(){
+        return view('auth/register');
+    }
 }
 ?>

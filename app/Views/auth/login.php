@@ -15,7 +15,8 @@
                             <label for="pass">Password</label>
                             <input type="password" class="form-control"name="password" placeholder="Password" required>
                         </div>
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <a href="<?= site_url("register")?>">Register</a>
+                        <button type="submit" class="btn btn-success float-right">Login</button>
                     </form>
                 </div>
             </div>

@@ -19,6 +19,10 @@
                             <label for="pass">Password</label>
                             <input type="password" class="form-control" placeholder="Password" required>
                         </div>
+                        <div class="form-group">
+                            <label for="pass">Conform Password</label>
+                            <input type="password" class="form-control" placeholder="Password Conformation" required>
+                        </div>
                         <button type="submit" class="btn btn-sucess">Login</button>
                     </form>
                 </div>
