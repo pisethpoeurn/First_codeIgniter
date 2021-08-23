@@ -52,32 +52,44 @@ class UserController extends Controller{
         return redirect()->to('user-list');
     }
 
+    /// To form login
     public function loginForm(){
         return view('auth/login');
     }
+
+    /// login
     public function login(){
-        if($this->exists($_POST['email'],$_POST['password']) != NULL){
-            // $session = session();
-            // $session->set('username',$_POST['username']);
+        // echo "Login Controller";
+        // var_dump($_POST['email'],$_POST['password']);die;
+        // if($this->exists($_POST['email'],$_POST['password']) != NULL){
+            $session = session();
+            $session->set('email',$_POST['email']);
+            $session->set('password',$_POST['password']);
+            // var_dump($session);die();
             return redirect()->to('user-list');
-        }else{
-            $data['message'] = "Invalid";
-            return view('login',$data);
-        }
+        // }
+        // else{
+        //     $data['message'] = "Invalid";
+        //     return view('login',$data);
+        // }
     }
-    private function exists($email,$password){
-        $usersModel = new UserModel();
-        $users = $usersModel->where('email',$email)->first();
-        if($users != NULL){
-            if(password_verify($password,$users['password'])){
-                return $users;
-            }
-        }
-        return NULL;
-    }    
     
+    // To form register
     public function registerForm(){
         return view('auth/register');
     }
+
+    /// Register
+    public function register(){
+        $usersModel = new userModel();
+        $usersModel->insert($_POST);
+        return redirect()->to('/');
+    }
+
+    /// Signout 
+    public function signOut(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/');
+    }
 }
-?>

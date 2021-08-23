@@ -209,7 +209,7 @@
 				<button onclick="toggleMenu();">&#9776;</button>
 			</li>
 			<li class="menu-item hidden"><a href="<?= site_url('user-list')?>">User</a></li>
-			<li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/" target="_blank">Auth</a>
+			<li class="menu-item hidden"><a href="<?= site_url('logout')?>">Sign Out</a>
 			</li>
 		</ul>
 	</div>
