@@ -59,19 +59,10 @@ class UserController extends Controller{
 
     /// login
     public function login(){
-        // echo "Login Controller";
-        // var_dump($_POST['email'],$_POST['password']);die;
-        // if($this->exists($_POST['email'],$_POST['password']) != NULL){
-            $session = session();
-            $session->set('email',$_POST['email']);
-            $session->set('password',$_POST['password']);
-            // var_dump($session);die();
-            return redirect()->to('user-list');
-        // }
-        // else{
-        //     $data['message'] = "Invalid";
-        //     return view('login',$data);
-        // }
+        $session = session();
+        $session->set('email',$_POST['email']);
+        $session->set('password',$_POST['password']);
+        return redirect()->to('user-list');
     }
     
     // To form register
