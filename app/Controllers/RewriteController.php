@@ -21,6 +21,7 @@ class UserController extends Controller{
         $datas['users'] = $usersModel->find($id);
         return view('user/editUser',$datas);
     }
+
     public function update(){
         $usersModel = new UserModel();
         $usersModel ->update($_POST['id'],$_POST);
@@ -39,6 +40,12 @@ class UserController extends Controller{
         $session ->set('password',$_POST['password']);
         return redirect()->to('user-list'); 	    	
 
+    }
+
+    public function logout(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/');
     }
 
 }
