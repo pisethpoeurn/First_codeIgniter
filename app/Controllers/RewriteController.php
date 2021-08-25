@@ -10,6 +10,10 @@ class UserController extends Controller{
         return view('user/index', $datas);
     }
 
+    public function formAdd(){
+        return view('user/userAdd');
+    }
+    
     public function store(){
         $usersModel = new UserModel();
         $usersModel->insert($_POST);

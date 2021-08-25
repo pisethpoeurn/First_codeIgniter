@@ -32,7 +32,7 @@ class UserController extends Controller{
         return view('user/userDetail', $datas);
     }
 
-    // Go to fome Edit
+    // Go to form Edit
     public function formEdit($id){
         $usersModel = new UserModel();
         $datas['users'] = $usersModel->find($id);

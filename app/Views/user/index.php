@@ -41,8 +41,9 @@
                             <td><?php echo $user['phone']; ?></td>
                             <td><?php echo $user['gender']; ?></td>
                             <td>
-                                <a href="<?= site_url('formEdit/'.$user['id'])?>" class="btn btn-primary btn-sm">edit</a>
-                                <a href="<?= site_url('deleteUser/'.$user['id'])?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item')">delete</a>
+                                <a href="<?= site_url('getUserById/'.$user['id'])?>" class=""><i class="material-icons text-success">visibility</i></a>
+                                <a href="<?= site_url('formEdit/'.$user['id'])?>" class=""><i class="material-icons text-blue">edit</i></a>
+                                <a href="<?= site_url('deleteUser/'.$user['id'])?>" class="" onclick="return confirm('Are you sure you want to delete this item')"><i class="material-icons text-danger">delete</i></a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
