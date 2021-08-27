@@ -12,7 +12,7 @@ class UserController extends Controller{
         return view('user/index', $datas);
     }
 
-    //Add User form
+    // Add User form
     public function create(){
         return view('user/addUser');
     }
@@ -26,7 +26,7 @@ class UserController extends Controller{
     }
 
     // Show specific user
-    public function fineUserById($id){
+    public function findUserById($id){
         $usersModel = new UserModel();
         $datas['users'] = $usersModel->find($id);
         return view('user/userDetail', $datas);

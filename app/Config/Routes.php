@@ -43,7 +43,7 @@ $routes->get('logout', 'UserController::signOut');
 $routes->get('user-list','UserController::index');
 $routes->get('formUser','UserController::create');
 $routes->post('addUser','UserController::store');
-$routes->get('getUserById/(:num)','UserController::fineUserById/$1');
+$routes->get('getUserById/(:num)','UserController::findUserById/$1');
 $routes->get('formEdit/(:num)', 'UserController::formEdit/$1');
 $routes->post('updateUser','UserController::update');
 $routes->get('deleteUser/(:num)','UserController::delete/$1');
